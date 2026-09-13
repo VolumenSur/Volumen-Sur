@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volumen sur — Estudio de arquitectura</title>
+<meta name="description" content="Volumen sur, estudio de arquitectura en Trelew, Chubut. Proyecto, dirección de obra, eficiencia energética y arquitectura bioambiental.">
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <img src="assets/logo.svg" alt="Volumen sur">
+      <div class="brand-text">
+        <div class="brand-name">Volumen sur</div>
+        <div class="brand-tag">estudio de arquitectura</div>
+      </div>
+    </div>
+    <nav class="tabs" id="tabs">
+      <button type="button" data-tab="inicio" class="is-active">Inicio</button>
+      <button type="button" data-tab="lab">Laboratorio Bioclimático</button>
+      <button type="button" data-tab="contacto">Contacto</button>
+      <button type="button" data-tab="quienes">Quiénes somos</button>
+    </nav>
+    <a class="ig-link" href="https://instagram.com/volumensur" target="_blank" rel="noopener">@volumensur</a>
+  </div>
+</header>
+
+<!-- ======================= INICIO ======================= -->
+<section class="tab-panel is-active" id="tab-inicio">
+  <div class="wrap">
+
+    <div class="hero">
+      <div class="eyebrow">estudio de arquitectura</div>
+      <h1>Volumen sur</h1>
+      <div class="tagline">Diseño · Territorio · Identidad</div>
+      <p class="lead">Arquitectura pensada desde el clima y el territorio patagónico. Proyecto, obra y eficiencia energética, con base en Trelew, Chubut.</p>
+      <div class="cta-row">
+        <button class="btn btn-primary" type="button" data-goto="lab">Ver Laboratorio Bioclimático</button>
+        <a class="btn btn-ghost" href="https://instagram.com/volumensur" target="_blank" rel="noopener">Seguinos en Instagram</a>
+      </div>
+    </div>
+
+    <div class="section-head">
+      <h2>Servicios</h2>
+      <p>Acompañamiento en cada etapa del proyecto, desde la idea hasta la obra terminada.</p>
+    </div>
+    <div class="services-grid" id="servicesGrid"></div>
+
+    <div class="section-head">
+      <h2>@volumensur</h2>
+      <p>Seguí el trabajo de Volumen sur en Instagram.</p>
+    </div>
+    <div class="cta-row" style="margin-top:8px;">
+      <a class="btn btn-ghost" href="https://instagram.com/volumensur" target="_blank" rel="noopener">Ver en Instagram</a>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-note">© <span id="year"></span> Volumen sur — estudio de arquitectura.</div>
+    </div>
+  </footer>
+</section>
+
+<!-- ======================= LABORATORIO BIOCLIMATICO ======================= -->
+<section class="tab-panel" id="tab-lab">
+  <div class="wrap">
+
+    <div class="lab-intro">
+      <h2>Laboratorio Bioclimático</h2>
+      <p>Elegí una ciudad y una estación del año, activá estrategias de diseño pasivo y mirá el resultado esperado en la mañana, el mediodía y la noche.</p>
+    </div>
+
+    <div class="lab-layout">
+      <div class="city-field">
+        <label for="citySelect">Ciudad</label>
+        <select id="citySelect" class="city-select"></select>
+        <div class="city-zone" id="cityZone"></div>
+        <div class="city-tag" id="cityTag"></div>
+      </div>
+    </div>
+
+    <nav class="season-tabs" id="seasonTabs" aria-label="Estación del año"></nav>
+
+    <div class="temps-row" id="tempsRow"></div>
+
+    <div class="strategies-head">
+      <h3>Estrategias pasivas</h3>
+      <div class="count" id="strategyCount">0 de 8 activas</div>
+    </div>
+    <div class="strategy-grid" id="strategyGrid"></div>
+
+    <div class="results">
+      <h3>Resultado esperado</h3>
+      <div class="gauges" id="gauges"></div>
+      <div class="legend">
+        <span><i class="lc-base"></i> sin estrategias</span>
+        <span><i class="lc-cur"></i> con las estrategias activas</span>
+        <span><i class="lc-band"></i> zona de confort (20–26°C)</span>
+      </div>
+      <div class="feedback" id="feedback"></div>
+    </div>
+
+    <p class="lab-note">Basado en relaciones simplificadas de física de edificios y en la carta bioclimática de Givoni — pensado para entender cómo actúa cada estrategia, no como cálculo de proyecto. Trelew, Comodoro Rivadavia, Esquel, Buenos Aires, Oberá, San Juan y Bariloche usan datos y zona IRAM 11603 de la base de estaciones provista. Rawson, Puerto Madryn, Gaiman y San Martín de los Andes no figuraban en esa base: sus valores son una estimación por proximidad climática y quedan sujetos a verificación.</p>
+
+  </div>
+</section>
+
+<!-- ======================= CONTACTO ======================= -->
+<section class="tab-panel" id="tab-contacto">
+  <div class="wrap">
+    <div class="section-head" style="margin-top:60px;">
+      <h2>Contacto</h2>
+      <p>Consultas de proyecto, obra o asesoramiento — también a distancia.</p>
+    </div>
+    <div class="footer-grid" style="max-width:640px; margin:36px auto 60px;">
+      <div>
+        <div class="brand-name">Volumen sur</div>
+        <p>Estudio de arquitectura — Diseño · Territorio · Identidad</p>
+        <p>Agustín Weinberg, Arq. UBA — Director</p>
+      </div>
+      <div>
+        <h3>Datos de contacto</h3>
+        <a class="contact-line" href="mailto:arqweinberg@gmail.com">arqweinberg@gmail.com</a>
+        <a class="contact-line" href="tel:+542805092204">+54 280 509-2204</a>
+        <a class="contact-line" href="https://instagram.com/volumensur" target="_blank" rel="noopener">@volumensur</a>
+        <p>Trelew, Chubut, Patagonia, Argentina</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= QUIENES SOMOS ======================= -->
+<section class="tab-panel" id="tab-quienes">
+  <div class="wrap">
+    <div class="about">
+      <div class="avatar">AW</div>
+      <div>
+        <h2>Agustín Weinberg</h2>
+        <div class="role">Arquitecto (UBA) · Maestría en Sustentabilidad, Arquitectura y Urbanismo (UBA)</div>
+        <p class="bio">Director de Volumen sur, estudio de arquitectura con base en Trelew, Chubut. Trabaja el diseño arquitectónico desde el territorio y el clima patagónico, integrando proyecto, dirección de obra y análisis de eficiencia energética en cada encargo.</p>
+
+        <div class="formacion">
+          <h3>Formación</h3>
+          <ul>
+            <li><span class="yr">Grado</span>Arquitecto — Universidad de Buenos Aires (UBA)</li>
+            <li><span class="yr">Posgrado</span>Maestría en Sustentabilidad, Arquitectura y Urbanismo — Universidad de Buenos Aires (UBA)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="js/main.js"></script>
+</body>
+</html>
