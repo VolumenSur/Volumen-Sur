@@ -229,8 +229,8 @@ footer.site-footer{
 }
 .strategy.is-on .switch{ border-color:var(--accent); }
 .strategy.is-on .switch::after{ transform:translateX(15px); background:var(--accent); }
-.strategy .body .name{ font-size:0.93rem; color:var(--ink); font-weight:600; }
-.strategy .body .desc{ font-size:0.78rem; color:var(--muted); margin-top:3px; line-height:1.4; }
+.strategy .body .name{ display:block; font-size:0.93rem; color:var(--ink); font-weight:600; }
+.strategy .body .desc{ display:block; font-size:0.78rem; color:var(--muted); margin-top:3px; line-height:1.4; }
 
 /* results / gauges */
 
