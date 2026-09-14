@@ -216,7 +216,7 @@ footer.site-footer{
 .strategy-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:10px; margin-top:16px; }
 .strategy{
   background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:13px 14px;
-  display:flex; align-items:flex-start; gap:12px; cursor:pointer; text-align:left;
+  display:flex; align-items:flex-start; gap:12px; cursor:pointer; text-align:left; color:var(--ink);
 }
 .strategy:hover{ border-color:var(--muted-2); }
 .strategy.is-on{ border-color:var(--accent); background:var(--surface-2); }
@@ -229,7 +229,7 @@ footer.site-footer{
 }
 .strategy.is-on .switch{ border-color:var(--accent); }
 .strategy.is-on .switch::after{ transform:translateX(15px); background:var(--accent); }
-.strategy .body .name{ font-size:0.93rem; }
+.strategy .body .name{ font-size:0.93rem; color:var(--ink); font-weight:600; }
 .strategy .body .desc{ font-size:0.78rem; color:var(--muted); margin-top:3px; line-height:1.4; }
 
 /* results / gauges */
