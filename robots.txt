@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://volumensur.github.io/Volumen-Sur/sitemap.xml
