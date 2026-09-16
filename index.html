@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volumen sur — Estudio de arquitectura</title>
+<meta name="description" content="Volumen sur, estudio de arquitectura en Trelew, Chubut. Proyecto, dirección de obra, eficiencia energética y arquitectura bioambiental.">
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script data-goatcounter="https://volumensur.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VQCJKC3W19"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VQCJKC3W19');
+</script>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <img src="assets/logo.svg" alt="Volumen sur">
+      <div class="brand-text">
+        <div class="brand-name">Volumen sur</div>
+        <div class="brand-tag">estudio de arquitectura</div>
+      </div>
+    </div>
+    <nav class="tabs" id="tabs">
+      <a href="#inicio" data-tab="inicio" class="is-active">Inicio</a>
+      <a href="#lab" data-tab="lab">Laboratorio Bioclimático</a>
+      <a href="#proyectos" data-tab="proyectos">Proyectos</a>
+      <a href="#taller" data-tab="taller">Taller Experimental</a>
+      <a href="#contacto" data-tab="contacto">Contacto</a>
+      <a href="#quienes" data-tab="quienes">Quiénes somos</a>
+    </nav>
+    <a class="ig-link" href="https://instagram.com/volumensur" target="_blank" rel="noopener">@volumensur</a>
+  </div>
+</header>
+
+<!-- ======================= INICIO ======================= -->
+
+<!-- ======================= PROYECTOS ======================= -->
+
+<!-- ======================= SERVICIOS ======================= -->
+
+<!-- ======================= INSTAGRAM ======================= -->
+
+<!-- ======================= LABORATORIO BIOCLIMATICO ======================= -->
+
+<!-- ======================= TALLER EXPERIMENTAL ======================= -->
+
+<!-- ======================= CONTACTO ======================= -->
+
+<!-- ======================= QUIENES SOMOS ======================= -->
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-note">© <span id="year"></span> Volumen sur — estudio de arquitectura.</div>
+  </div>
+</footer>
+
+<section class="page-section" id="inicio">
+  <div class="wrap">
+    <div class="hero">
+      <div class="eyebrow">estudio de arquitectura</div>
+      <h1>Volumen sur</h1>
+      <div class="tagline">Diseño · Territorio · Identidad</div>
+      <p class="lead">Arquitectura pensada desde el clima y el territorio patagónico. Proyecto, obra y eficiencia energética, con base en Trelew, Chubut.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://wa.me/5492805092204?text=Hola%20Agust%C3%ADn%2C%20quiero%20hacer%20una%20consulta%20sobre%20un%20proyecto" target="_blank" rel="noopener">Consultanos por WhatsApp</a>
+        <a class="btn btn-ghost" href="#proyectos">Ver proyectos</a>
+        <a class="btn btn-ghost" href="#lab">Laboratorio Bioclimático</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section" id="servicios">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Servicios</h2>
+      <p>Acompañamiento en cada etapa del proyecto, desde la idea hasta la obra terminada.</p>
+    </div>
+    <div class="services-grid" id="servicesGrid"></div>
+  </div>
+</section>
+
+<section class="page-section" id="instagram">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>@volumensur</h2>
+      <p>Seguí el trabajo de Volumen sur en Instagram.</p>
+    </div>
+    <div class="cta-row" style="margin-top:8px;">
+      <a class="btn btn-ghost" href="https://instagram.com/volumensur" target="_blank" rel="noopener">Ver en Instagram</a>
+    </div>
+  </div>
+</section>
+
+<section class="page-section" id="lab">
+  <div class="wrap">
+
+    <div class="lab-intro">
+      <h2>Laboratorio Bioclimático</h2>
+      <p>Elegí una ciudad y una estación del año, activá estrategias de diseño pasivo y mirá el resultado esperado en la mañana, el mediodía y la noche.</p>
+    </div>
+
+    <div class="lab-layout">
+      <div class="city-field">
+        <label for="citySelect">Ciudad</label>
+        <select id="citySelect" class="city-select"></select>
+        <div class="city-zone" id="cityZone"></div>
+        <div class="city-tag" id="cityTag"></div>
+      </div>
+    </div>
+
+    <nav class="season-tabs" id="seasonTabs" aria-label="Estación del año"></nav>
+
+    <div class="temps-row" id="tempsRow"></div>
+
+    <div class="strategies-head">
+      <h3>Estrategias pasivas</h3>
+      <div class="count" id="strategyCount">0 de 8 activas</div>
+    </div>
+    <div class="strategy-grid" id="strategyGrid"></div>
+
+    <div class="results">
+      <h3>Resultado esperado</h3>
+      <div class="gauges" id="gauges"></div>
+      <div class="legend">
+        <span><i class="lc-base"></i> sin estrategias</span>
+        <span><i class="lc-cur"></i> con las estrategias activas</span>
+        <span><i class="lc-band"></i> zona de confort (20–26°C)</span>
+      </div>
+      <div class="feedback" id="feedback"></div>
+    </div>
+
+    <p class="lab-note">Basado en relaciones simplificadas de física de edificios y en la carta bioclimática de Givoni — pensado para entender cómo actúa cada estrategia, no como cálculo de proyecto. Trelew, Comodoro Rivadavia, Esquel, Buenos Aires, Oberá, San Juan y Bariloche usan datos y zona IRAM 11603 de la base de estaciones provista. Rawson, Puerto Madryn, Gaiman y San Martín de los Andes no figuraban en esa base: sus valores son una estimación por proximidad climática y quedan sujetos a verificación.</p>
+
+  </div>
+</section>
+
+<section class="page-section" id="proyectos">
+  <div class="wrap">
+
+    <div class="section-head">
+      <h2>Proyectos</h2>
+      <p>Una muestra de trabajos en desarrollo. Se va a ir ampliando con más proyectos.</p>
+    </div>
+
+    <!-- Proyecto: Cabaña Trevelin -->
+    <article class="project-card">
+      <div class="project-gallery">
+        <a class="pg-large" href="assets/proyectos/trevelin-2.jpg" target="_blank" rel="noopener">
+          <img src="assets/proyectos/trevelin-2.jpg" alt="Cabaña bioambiental en Trevelin, vista exterior al atardecer">
+        </a>
+        <a class="pg-small" href="assets/proyectos/trevelin-1.jpg" target="_blank" rel="noopener">
+          <img src="assets/proyectos/trevelin-1.jpg" alt="Cabaña bioambiental en Trevelin, vista exterior de día">
+        </a>
+        <a class="pg-small" href="assets/proyectos/trevelin-3.jpg" target="_blank" rel="noopener">
+          <img src="assets/proyectos/trevelin-3.jpg" alt="Cabaña bioambiental en Trevelin, interior con hogar a leña">
+        </a>
+      </div>
+      <div class="project-body">
+        <h3>Cabaña bioambiental — Trevelin, Chubut</h3>
+        <div class="project-tag">Vivienda unifamiliar · renders de proyecto</div>
+        <p>Cabaña pensada para el clima cordillerano de Trevelin, con las estrategias de diseño pasivo trabajadas desde el proyecto.</p>
+        <div class="project-strategies">
+          <span>Inercia térmica</span>
+          <span>Ganancia solar</span>
+          <span>Control solar</span>
+          <span>Aislación térmica</span>
+          <span>Acceso por antecámara</span>
+          <span>Orientación al reparo de vientos predominantes</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Proyecto: Casa clima tropical -->
+    <article class="project-card">
+      <div class="project-gallery">
+        <a class="pg-large" href="assets/proyectos/tropical-3.jpg" target="_blank" rel="noopener">
+          <img src="assets/proyectos/tropical-3.jpg" alt="Casa sustentable en clima tropical, vista aérea entre la vegetación">
+        </a>
+        <a class="pg-small" href="assets/proyectos/tropical-1.jpg" target="_blank" rel="noopener">
+          <img src="assets/proyectos/tropical-1.jpg" alt="Casa sustentable en clima tropical, acceso y galería">
+        </a>
+        <a class="pg-small" href="assets/proyectos/tropical-2.jpg" target="_blank" rel="noopener">
+          <img src="assets/proyectos/tropical-2.jpg" alt="Casa sustentable en clima tropical, vista con piscina">
+        </a>
+      </div>
+      <div class="project-body">
+        <h3>Casa sustentable en clima tropical — Punta Arenas, Costa Rica</h3>
+        <div class="project-tag">Vivienda unifamiliar · renders de proyecto</div>
+        <p>Vivienda resuelta para el clima cálido-húmedo de la costa pacífica de Costa Rica, con una envolvente liviana que se integra a la vegetación del lugar.</p>
+        <div class="project-strategies">
+          <span>Ventilación cruzada</span>
+          <span>Control solar</span>
+          <span>Iluminación natural</span>
+        </div>
+
+        <div class="studies-row">
+          <figure>
+            <a href="assets/proyectos/tropical-estudio-ventilacion.jpg" target="_blank" rel="noopener"><img src="assets/proyectos/tropical-estudio-ventilacion.jpg" alt="Estudio de ventilación cruzada"></a>
+            <figcaption>Estudio de ventilación cruzada</figcaption>
+          </figure>
+          <figure>
+            <a href="assets/proyectos/tropical-estudio-asoleamiento.jpg" target="_blank" rel="noopener"><img src="assets/proyectos/tropical-estudio-asoleamiento.jpg" alt="Estudio de asoleamiento"></a>
+            <figcaption>Estudio de asoleamiento</figcaption>
+          </figure>
+          <figure>
+            <a href="assets/proyectos/tropical-estudio-iluminacion.jpg" target="_blank" rel="noopener"><img src="assets/proyectos/tropical-estudio-iluminacion.jpg" alt="Estudio de iluminación natural"></a>
+            <figcaption>Estudio de iluminación natural</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- Proyecto: Urbanismo Rawson -->
+    <article class="project-card">
+      <div class="project-gallery">
+        <a class="pg-large" href="assets/proyectos/rawson-1.jpg" target="_blank" rel="noopener">
+          <img src="assets/proyectos/rawson-1.jpg" alt="Urbanismo sustentable en Rawson, Área 12, vista aérea del barrio">
+        </a>
+        <a class="pg-small" href="assets/proyectos/rawson-2.jpg" target="_blank" rel="noopener">
+          <img src="assets/proyectos/rawson-2.jpg" alt="Urbanismo sustentable en Rawson, render axonométrico del boulevard">
+        </a>
+        <a class="pg-small" href="assets/proyectos/rawson-3.jpg" target="_blank" rel="noopener">
+          <img src="assets/proyectos/rawson-3.jpg" alt="Urbanismo sustentable en Rawson, render de la vereda peatonal">
+        </a>
+      </div>
+      <div class="project-body">
+        <h3>Urbanismo sustentable — Rawson, Área 12 (El Pozo)</h3>
+        <div class="project-tag">Espacio público · proyecto en búsqueda de financiamiento (Banco Mundial)</div>
+        <p>Rediseño del espacio público del Área 12 de Rawson, con forestación, veredas y equipamiento urbano pensados para el clima y el paisaje de la estepa patagónica costera.</p>
+        <div class="project-strategies">
+          <span>Forestación urbana</span>
+          <span>Espacio público peatonal</span>
+          <span>Mobiliario y equipamiento urbano</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Proyecto: Desarrollo CABA -->
+    <article class="project-card">
+      <div class="project-gallery-pair">
+        <a href="assets/proyectos/caba-1.jpg" target="_blank" rel="noopener">
+          <img src="assets/proyectos/caba-1.jpg" alt="Desarrollo inmobiliario en Ciudad de Buenos Aires, fachada con vegetación">
+        </a>
+        <a href="assets/proyectos/caba-2.jpg" target="_blank" rel="noopener">
+          <img src="assets/proyectos/caba-2.jpg" alt="Desarrollo inmobiliario en Ciudad de Buenos Aires, corte axonométrico">
+        </a>
+      </div>
+      <div class="project-body">
+        <h3>Desarrollo inmobiliario — Ciudad de Buenos Aires</h3>
+        <div class="project-tag">Uso mixto / vivienda multifamiliar · renders de proyecto</div>
+        <p>Edificio de vivienda pensado como una envolvente permeable, con terrazas escalonadas que traman la vegetación entre el interior y la calle.</p>
+        <div class="project-strategies">
+          <span>Control solar</span>
+          <span>Expansiones tipo fuelle exterior-interior</span>
+          <span>Ventilación cruzada</span>
+          <span>Aporte de la vegetación</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Proyecto: Escuela en el Delta -->
+    <article class="project-card">
+      <div class="project-gallery-pair">
+        <a href="assets/proyectos/delta-1.jpg" target="_blank" rel="noopener">
+          <img src="assets/proyectos/delta-1.jpg" alt="Escuela en el Delta, obra en construcción sobre pilotes">
+        </a>
+        <a href="assets/proyectos/delta-2.jpg" target="_blank" rel="noopener">
+          <img src="assets/proyectos/delta-2.jpg" alt="Escuela en el Delta, modelo axonométrico del conjunto">
+        </a>
+      </div>
+      <div class="project-body">
+        <h3>Escuela en el Delta</h3>
+        <div class="project-tag">Equipamiento educativo · obra y proyecto</div>
+        <p>Escuela elevada sobre pilotes para convivir con el régimen de crecientes del Delta, organizada en torno a galerías que hacen de fuelle climático entre las aulas y el monte.</p>
+        <div class="project-strategies">
+          <span>Control solar</span>
+          <span>Expansiones tipo fuelle exterior-interior</span>
+          <span>Ventilación cruzada</span>
+          <span>Aporte de la vegetación</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="page-section" id="taller">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Taller Experimental</h2>
+      <p>Modelos físicos y maquetas de estudio estructural.</p>
+    </div>
+    <div class="taller-grid">
+      <figure><a href="assets/taller/maqueta-01.jpg" target="_blank" rel="noopener"><img src="assets/taller/maqueta-01.jpg" alt="Maqueta de estudio estructural 1"></a></figure>
+      <figure><a href="assets/taller/maqueta-02.jpg" target="_blank" rel="noopener"><img src="assets/taller/maqueta-02.jpg" alt="Maqueta de estudio estructural 2"></a></figure>
+      <figure><a href="assets/taller/maqueta-03.jpg" target="_blank" rel="noopener"><img src="assets/taller/maqueta-03.jpg" alt="Maqueta de estudio estructural 3"></a></figure>
+      <figure><a href="assets/taller/maqueta-04.jpg" target="_blank" rel="noopener"><img src="assets/taller/maqueta-04.jpg" alt="Maqueta de estudio estructural 4"></a></figure>
+      <figure><a href="assets/taller/maqueta-05.jpg" target="_blank" rel="noopener"><img src="assets/taller/maqueta-05.jpg" alt="Maqueta de estudio estructural 5"></a></figure>
+      <figure><a href="assets/taller/maqueta-06.jpg" target="_blank" rel="noopener"><img src="assets/taller/maqueta-06.jpg" alt="Maqueta de estudio estructural 6"></a></figure>
+      <figure><a href="assets/taller/maqueta-07.jpg" target="_blank" rel="noopener"><img src="assets/taller/maqueta-07.jpg" alt="Maqueta de estudio estructural 7"></a></figure>
+      <figure><a href="assets/taller/maqueta-08.jpg" target="_blank" rel="noopener"><img src="assets/taller/maqueta-08.jpg" alt="Maqueta de estudio estructural 8"></a></figure>
+      <figure><a href="assets/taller/maqueta-09.jpg" target="_blank" rel="noopener"><img src="assets/taller/maqueta-09.jpg" alt="Maqueta de estudio estructural 9"></a></figure>
+      <figure><a href="assets/taller/maqueta-10.jpg" target="_blank" rel="noopener"><img src="assets/taller/maqueta-10.jpg" alt="Estudio de referencia: pabellón de madera"></a></figure>
+      <figure><a href="assets/taller/maqueta-11.jpg" target="_blank" rel="noopener"><img src="assets/taller/maqueta-11.jpg" alt="Estudio paramétrico de pasarela, vista general"></a></figure>
+      <figure><a href="assets/taller/maqueta-12.jpg" target="_blank" rel="noopener"><img src="assets/taller/maqueta-12.jpg" alt="Estudio paramétrico de pasarela, detalle"></a></figure>
+    </div>
+  </div>
+</section>
+
+<section class="page-section" id="contacto">
+  <div class="wrap">
+    <div class="section-head" style="margin-top:60px;">
+      <h2>Contacto</h2>
+      <p>Consultas de proyecto, obra o asesoramiento — también a distancia.</p>
+    </div>
+    <div class="footer-grid" style="max-width:640px; margin:36px auto 60px;">
+      <div>
+        <div class="brand-name">Volumen sur</div>
+        <p>Estudio de arquitectura — Diseño · Territorio · Identidad</p>
+        <p>Agustín Weinberg, Arq. UBA — Director</p>
+      </div>
+      <div>
+        <h3>Datos de contacto</h3>
+        <a class="contact-line" href="https://wa.me/5492805092204?text=Hola%20Agust%C3%ADn%2C%20quiero%20hacer%20una%20consulta%20sobre%20un%20proyecto" target="_blank" rel="noopener">WhatsApp: +54 280 509-2204</a>
+        <a class="contact-line" href="mailto:arqweinberg@gmail.com">arqweinberg@gmail.com</a>
+        <a class="contact-line" href="https://instagram.com/volumensur" target="_blank" rel="noopener">@volumensur</a>
+        <p>Trelew, Chubut, Patagonia, Argentina</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section" id="quienes">
+  <div class="wrap">
+    <div class="about">
+      <div class="avatar">AW</div>
+      <div>
+        <h2>Agustín Weinberg</h2>
+        <div class="role">Arquitecto (UBA) · Maestría en Sustentabilidad, Arquitectura y Urbanismo (UBA)</div>
+        <p class="bio">Director de Volumen sur, estudio de arquitectura con base en Trelew, Chubut. Trabaja el diseño arquitectónico desde el territorio y el clima patagónico, integrando proyecto, dirección de obra y análisis de eficiencia energética en cada encargo.</p>
+
+        <div class="formacion">
+          <h3>Formación</h3>
+          <ul>
+            <li><span class="yr">Grado</span>Arquitecto — Universidad de Buenos Aires (UBA)</li>
+            <li><span class="yr">Posgrado</span>Maestría en Sustentabilidad, Arquitectura y Urbanismo — Universidad de Buenos Aires (UBA)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="js/main.js"></script>
+</body>
+</html>
