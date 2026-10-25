@@ -238,6 +238,48 @@
     });
 
     $('feedback').innerHTML = buildFeedback(activeCount, comfortCount, hotMoments, coldMoments);
+
+    renderCost(out);
+  }
+
+  // Costo relativo de energía (1 a 5): grados que faltan o sobran respecto del confort,
+  // sumados en los tres momentos del día. Cada $ equivale a COST_STEP grados.
+  var COST_STEP = {heat:9, cool:3};
+  var COST_MAX = 5;
+
+  function energyNeed(temps){
+    var need = {heat:0, cool:0};
+    MOMENTS.forEach(function(m){
+      var t = temps[m.id];
+      if (t < COMFORT_MIN) need.heat += COMFORT_MIN - t;
+      if (t > COMFORT_MAX) need.cool += t - COMFORT_MAX;
+    });
+    return need;
+  }
+  function costLevel(degrees, kind){ return Math.min(COST_MAX, Math.ceil(degrees / COST_STEP[kind] - 0.001)); }
+
+  function renderCost(out){
+    var base = energyNeed(out.unmitigated), cur = energyNeed(out.result);
+    var rows = [
+      {kind:'heat', label:'Calefacción', fuel:'gas'},
+      {kind:'cool', label:'Refrigeración', fuel:'electricidad'},
+    ];
+    $('costRow').innerHTML = rows.map(function(r){
+      var b = costLevel(base[r.kind], r.kind), c = Math.min(costLevel(cur[r.kind], r.kind), b);
+      var symbols = '';
+      for (var i = 1; i <= COST_MAX; i++){
+        var cls = i <= c ? 'is-on' : (i <= b ? 'is-saved' : '');
+        symbols += '<span class="' + cls + '">$</span>';
+      }
+      var note;
+      if (b === 0) note = 'No hace falta';
+      else if (c === b) note = 'Sin ahorro todavía';
+      else if (c === 0) note = 'Ahorro total';
+      else note = 'Ahorrás ' + (b - c) + ' de ' + b;
+      return '<div class="cost-cell"><div class="cost-head"><span class="cost-label">' + r.label + '</span><span class="cost-fuel">' + r.fuel + '</span></div>' +
+        '<div class="cost-symbols" aria-label="' + c + ' de ' + COST_MAX + '">' + symbols + '</div>' +
+        '<div class="cost-note">' + note + '</div></div>';
+    }).join('');
   }
 
   function buildFeedback(activeCount, comfortCount, hotMoments, coldMoments){
