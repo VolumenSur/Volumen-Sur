@@ -75,8 +75,6 @@
       seasons:{ verano:{m:25,d:35,n:19}, otono:{m:16,d:25,n:11}, invierno:{m:7,d:16,n:2}, primavera:{m:17,d:28,n:11} } },
     { id:'bariloche', name:'San Carlos de Bariloche', tag:'Río Negro — cordillera, lago', veg:'pine', windy:false, humidity:'temperate', zone:'VI',
       seasons:{ verano:{m:12,d:21,n:6}, otono:{m:6,d:15,n:2}, invierno:{m:2,d:7,n:-1}, primavera:{m:6,d:17,n:1} } },
-    { id:'smandes', name:'San Martín de los Andes', tag:'Neuquén — cordillera, lago (estimado)', veg:'pine', windy:false, humidity:'temperate', zone:'VI',
-      seasons:{ verano:{m:11,d:23,n:7}, otono:{m:6,d:14,n:2}, invierno:{m:1,d:8,n:-3}, primavera:{m:6,d:16,n:1} } },
   ];
 
   var SEASONS = [
