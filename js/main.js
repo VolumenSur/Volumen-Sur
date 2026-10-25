@@ -200,15 +200,6 @@
 
     Array.prototype.forEach.call(seasonTabs.children, function(t){ t.classList.toggle('is-active', t._id === season.id); });
 
-    var tempsRow = $('tempsRow');
-    tempsRow.innerHTML = '';
-    MOMENTS.forEach(function(m){
-      var cell = document.createElement('div');
-      cell.className = 'temp-cell';
-      cell.innerHTML = '<div class="moment">' + m.label + '</div><div class="value">' + seasonData[({morning:'m',midday:'d',night:'n'})[m.id]] + '<sup>°C</sup></div>';
-      tempsRow.appendChild(cell);
-    });
-
     var activeCount = 0;
     Array.prototype.forEach.call(strategyGrid.children, function(b){
       var on = a[b._id];
@@ -216,7 +207,6 @@
       b.classList.toggle('is-on', on);
       b.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
-    $('strategyCount').textContent = activeCount + ' de ' + STRATEGIES.length + ' activas';
 
     var out = computeForSeason(city, seasonData, a);
     var gauges = $('gauges');

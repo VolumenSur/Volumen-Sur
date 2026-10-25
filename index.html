@@ -99,14 +99,6 @@
 
     <nav class="season-tabs" id="seasonTabs" aria-label="Estación del año"></nav>
 
-    <div class="temps-row" id="tempsRow"></div>
-
-    <div class="strategies-head">
-      <h3>Estrategias pasivas</h3>
-      <div class="count" id="strategyCount">0 de 8 activas</div>
-    </div>
-    <div class="strategy-grid" id="strategyGrid"></div>
-
     <div class="results">
       <h3>Resultado esperado</h3>
       <div class="gauges" id="gauges"></div>
@@ -115,8 +107,11 @@
         <span><i class="lc-cur"></i> con las estrategias activas</span>
         <span><i class="lc-band"></i> zona de confort (20–26°C)</span>
       </div>
-      <div class="feedback" id="feedback"></div>
     </div>
+
+    <div class="strategy-grid" id="strategyGrid" aria-label="Estrategias pasivas"></div>
+
+    <div class="feedback" id="feedback"></div>
 
     <p class="lab-note">Basado en relaciones simplificadas de física de edificios y en la carta bioclimática de Givoni — pensado para entender cómo actúa cada estrategia, no como cálculo de proyecto. Trelew, Comodoro Rivadavia, Esquel, Buenos Aires, Oberá, San Juan y Bariloche usan datos y zona IRAM 11603 de la base de estaciones provista. Rawson, Puerto Madryn, Gaiman y San Martín de los Andes no figuraban en esa base: sus valores son una estimación por proximidad climática y quedan sujetos a verificación.</p>
 
