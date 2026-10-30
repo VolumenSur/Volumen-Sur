@@ -492,3 +492,5 @@ footer.site-footer{
   .home-model{ height:170px; }
 }
 [hidden]{ display:none !important; }
+/* el selector siempre legible aunque una sombra pase por debajo */
+.home-sun{ background:rgba(250,251,250,0.86); border-radius:16px; padding:2px 10px; }

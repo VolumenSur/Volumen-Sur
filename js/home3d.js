@@ -38,6 +38,15 @@
     var L = latDeg * Math.PI / 180, d = decDeg * Math.PI / 180;
     return Math.acos(Math.max(-1, Math.min(1, -Math.tan(L) * Math.tan(d))));
   }
+  // el slider recorre las horas con el sol a más de 15° (o 5° menos que su altura del mediodía,
+  // si en invierno no llega a 20°): así las sombras no se estiran hasta tapar el selector
+  function sunWindow(latDeg, decDeg){
+    var L = latDeg * Math.PI / 180, d = decDeg * Math.PI / 180;
+    var noon = Math.asin(Math.sin(L) * Math.sin(d) + Math.cos(L) * Math.cos(d));
+    var minAlt = Math.min(15 * Math.PI / 180, noon - 5 * Math.PI / 180);
+    var c = (Math.sin(minAlt) - Math.sin(L) * Math.sin(d)) / (Math.cos(L) * Math.cos(d));
+    return Math.acos(Math.max(-1, Math.min(1, c)));
+  }
   function fmt(h){ var hh = Math.floor(h), mm = Math.floor((h - hh) * 60); return String(hh).padStart(2,'0') + ':' + String(mm).padStart(2,'0'); }
 
   // ---- selector: ciudad, estación y hora ----
@@ -170,8 +179,8 @@
     var k;
     if (manual) k = hourInput.value / 1000;
     else { k = ((now - t0) % DAY_MS) / DAY_MS; hourInput.value = Math.round(k * 1000); }
-    var h0 = halfDay(city.lat, season.dec), margin = 0.25;
-    var ha = (-h0 + margin) + (2 * (h0 - margin)) * k;
+    var h0 = sunWindow(city.lat, season.dec);
+    var ha = -h0 + 2 * h0 * k;
     var v = sunVector(city.lat, season.dec, ha);
     sun.position.copy(v.clone().multiplyScalar(40)); sun.target.position.set(0, 0, 0);
     sun.intensity = 0.35 + 0.6 * Math.min(1, Math.max(0, v.y) / 0.45);
