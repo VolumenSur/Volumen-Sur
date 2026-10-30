@@ -385,3 +385,7 @@ footer.site-footer{
 
 /* dos secciones oscuras seguidas (laboratorio → proyectos): línea divisoria */
 .page-section:not(.inv):not(.band) + .page-section:not(.inv):not(.band){ border-top:1px solid var(--line); }
+
+/* servicios: oscuro intermedio, etiquetas en dorado */
+.page-section#servicios{ background:var(--surface); border-block:1px solid var(--line-soft); }
+#servicios .service{ border-color:rgba(216,178,92,0.55); color:var(--accent); }
