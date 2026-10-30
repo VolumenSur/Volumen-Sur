@@ -47,18 +47,25 @@
   </div>
 </header>
 
-<section class="page-section" id="inicio">
-  <div class="wrap">
-    <div class="hero">
-      <div class="eyebrow">estudio de arquitectura</div>
-      <h1>Volumen sur</h1>
-      <div class="tagline">Diseño · Territorio · Identidad</div>
-      <p class="lead">Arquitectura pensada desde el clima y el territorio patagónico. Proyecto, obra y eficiencia energética, con base en Trelew, Chubut.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="https://wa.me/5492805092204?text=Hola%20Agust%C3%ADn%2C%20quiero%20hacer%20una%20consulta%20sobre%20un%20proyecto" target="_blank" rel="noopener">Consultanos por WhatsApp</a>
-        <a class="btn btn-ghost" href="#proyectos">Ver proyectos</a>
-        <a class="btn btn-ghost" href="#lab">Laboratorio Bioclimático</a>
-      </div>
+<section class="page-section home" id="inicio">
+  <div class="wrap home-inner">
+    <div class="home-eyebrow">estudio de arquitectura</div>
+    <h1>Volumen sur</h1>
+    <div class="home-tagline">Diseño · Territorio · Identidad</div>
+    <p class="home-lead">Arquitectura pensada desde el clima y el territorio patagónico. Proyecto, obra y eficiencia energética, con base en Trelew, Chubut.</p>
+    <div class="cta-row home-cta">
+      <a class="btn btn-primary" href="https://wa.me/5492805092204?text=Hola%20Agust%C3%ADn%2C%20quiero%20hacer%20una%20consulta%20sobre%20un%20proyecto" target="_blank" rel="noopener">Consultanos por WhatsApp</a>
+      <a class="btn btn-ghost" href="#proyectos">Ver proyectos</a>
+      <a class="btn btn-ghost" href="#lab">Laboratorio Bioclimático</a>
+    </div>
+    <div class="home-model" id="homeModel" aria-hidden="true"></div>
+    <div class="home-sun">
+      <label for="homeCity" class="visually-hidden">Ciudad</label>
+      <select id="homeCity"></select>
+      <div class="home-seasons" id="homeSeasons" role="group" aria-label="Estación del año"></div>
+      <label for="homeHour" class="visually-hidden">Hora del día</label>
+      <input type="range" id="homeHour" min="0" max="1000" value="500">
+      <span class="home-clock" id="homeClock" aria-hidden="true">12:00</span>
     </div>
   </div>
 </section>
@@ -335,6 +342,8 @@
   </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/home3d.js"></script>
 </body>
 </html>
