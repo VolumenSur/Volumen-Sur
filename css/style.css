@@ -102,14 +102,11 @@ nav.tabs .ig-link{ display:inline-flex; align-items:center; gap:8px; margin-left
   --ink:#141A1E; --muted:#4C5957; --muted-2:#6B7775; --line:#C2CBC5; --line-soft:#D2D9D4;
   --accent:#8C6A1C; --cold:#2E6389; --comfort:#4D7838; --comfort-soft:#C4D5B8; --hot:#A24C20;
 }
-/* franja de acento */
+/* sección en el amarillo de acento */
 .page-section.band{
-  --ink:#1A1508; --muted:#4A3D17; --line:#1A1508; --muted-2:#1A1508;
-  background:var(--accent); color:var(--ink); padding:44px 0;
+  --ink:#1A1508; --muted:#4A3D17; --muted-2:#5C4C1E; --line:rgba(26,21,8,0.28);
+  background:var(--accent); color:var(--ink);
 }
-.page-section.band .section-head{ display:flex; align-items:baseline; justify-content:space-between; gap:12px 24px; flex-wrap:wrap; text-align:left; }
-.page-section.band .section-head p{ margin:0; }
-.page-section.band .cta-row{ margin-top:16px; }
 
 /* ---------- inicio: hero ---------- */
 
