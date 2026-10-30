@@ -410,3 +410,41 @@ footer.site-footer{
 #servicios .services-list{ margin-top:0; }
 .page-section#servicios{ padding:36px 0; }
 @media (max-width:640px){ .page-section#servicios{ padding:28px 0; } }
+
+/* ---------- laboratorio en pantalla vertical (celular) ---------- */
+/* el resultado queda fijo arriba mientras se activan las estrategias */
+@media (max-width:640px){
+  .lab-intro h2{ font-size:1.45rem; }
+  .lab-intro p{ font-size:0.9rem; }
+  .city-select{ max-width:none; }
+  .season-tabs{ margin-top:20px; }
+
+  .results{
+    position:sticky; top:53px; z-index:5;
+    margin:18px -16px 0; padding:10px 16px 8px;
+    background:var(--bg); border-bottom:1px solid var(--line);
+    box-shadow:0 8px 12px -10px rgba(0,0,0,0.6);
+  }
+  .results h3{ font-size:0.95rem; }
+  .gauges{ grid-template-columns:repeat(3, minmax(0,1fr)); gap:12px; margin-top:8px; }
+  .gauge .g-head{ flex-direction:column; align-items:flex-start; gap:0; margin-bottom:6px; }
+  .gauge .g-moment{ font-size:0.66rem; }
+  .gauge .g-value{ font-size:1.05rem; }
+  .g-track{ height:6px; margin:0 3px; }
+  .g-baseline, .g-marker{ width:10px; height:10px; }
+  .g-scale{ display:none; }
+  .g-foot{ margin-top:6px; gap:4px; }
+  .g-status{ font-size:0.72rem; }
+  .g-cost{ font-size:0.85rem; }
+  .legend{ gap:4px 12px; margin-top:8px; font-size:0.66rem; }
+
+  .feedback{ margin-top:14px; padding:11px 13px; font-size:0.85rem; }
+  .strategy-grid{ gap:8px; margin-top:14px; }
+  .strategy{ padding:10px 12px; gap:10px; }
+  .strategy .body .name{ font-size:0.9rem; }
+  .strategy .body .desc{ font-size:0.76rem; }
+}
+/* celular acostado (pantalla baja): sin resultado fijo, para no tapar todo */
+@media (max-width:900px) and (max-height:520px){
+  .results{ position:static; box-shadow:none; }
+}
