@@ -406,3 +406,7 @@ footer.site-footer{
   #quienes .avatar{ width:56px; height:56px; font-size:1.1rem; }
   #quienes .about .formacion li{ grid-template-columns:1fr; gap:0; }
 }
+.visually-hidden{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+#servicios .services-list{ margin-top:0; }
+.page-section#servicios{ padding:36px 0; }
+@media (max-width:640px){ .page-section#servicios{ padding:28px 0; } }
