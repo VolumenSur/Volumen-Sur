@@ -70,7 +70,8 @@
 
   // el sol avanza solo; si la persona mueve la hora, queda donde la deja
   var hourInput = document.getElementById('homeHour');
-  var manual = reduceMotion;
+  var manual = true;              // fijo: el sol solo cambia si se mueve la hora, la estación o la ciudad
+  hourInput.value = 300;          // media mañana: sombras visibles
   hourInput.addEventListener('input', function(){ manual = true; kick(); });
 
   // ---- escena ----
@@ -81,7 +82,11 @@
   renderer.setClearColor(0xFAFBFA, 1);
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-  hero.insertBefore(renderer.domElement, hero.firstChild);
+  // estilos del lienzo en línea: nunca empuja el alto del Inicio, aunque el CSS esté desactualizado en caché
+  var cv = renderer.domElement;
+  cv.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;display:block;pointer-events:none;';
+  hero.style.position = 'relative'; hero.style.overflow = 'hidden';
+  hero.insertBefore(cv, hero.firstChild);
 
   var scene = new THREE.Scene();
   var camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 100);
@@ -150,7 +155,7 @@
 
   // ---- encuadre: escala fija y la maqueta en su lugar, debajo de los botones ----
   function resize(){
-    var w = hero.clientWidth, h = hero.clientHeight;
+    var w = hero.clientWidth, h = Math.min(hero.clientHeight, 2000);
     if (!w || !h) return;
     renderer.setSize(w, h, false);
     var u = w < 760 ? 0.046 : 0.042;
