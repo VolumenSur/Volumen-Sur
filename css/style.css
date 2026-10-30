@@ -571,3 +571,16 @@ header.site-nav.over-photo{ background:linear-gradient(180deg, rgba(12,15,17,0.5
 .page-section.home#sol{ padding:44px 0 20px; }
 .sol-title{ margin:0; font-family:'Cormorant Garamond', Georgia, serif; font-style:italic; font-size:1.25rem; color:var(--muted); }
 #sol .home-model{ height:180px; }
+
+/* inicio y header a todo el ancho del navegador, con margen lateral */
+.hero-photo-inner.wrap{ max-width:none; padding-left:max(24px, 3.6vw); padding-right:max(24px, 3.6vw); }
+.hero-photo-copy{ max-width:min(620px, 46vw); }
+.hero-photo h1{ font-size:clamp(2.6rem, 5vw, 5rem); }
+.hero-photo-lead{ max-width:440px; font-size:1rem; }
+.nav-inner{ max-width:none; padding-left:max(16px, 3.6vw); padding-right:max(16px, 3.6vw); }
+@media (max-width:760px){ .hero-photo-copy{ max-width:none; } .hero-photo h1{ font-size:2.5rem; } }
+
+/* el resto del sitio, más ancho en pantallas grandes */
+.wrap{ max-width:1280px; padding-left:max(24px, 3.6vw); padding-right:max(24px, 3.6vw); }
+.page-section.hero-photo{ min-height:100svh; }
+@media (max-width:640px){ .wrap{ padding-left:16px; padding-right:16px; } }
