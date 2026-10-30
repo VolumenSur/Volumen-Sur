@@ -14,6 +14,17 @@
     navLinks.forEach(function(a){ a.classList.toggle('is-active', a.dataset.tab === id); });
   }
 
+  var menuBtn = document.getElementById('menuBtn');
+  var tabsNav = document.getElementById('tabs');
+  function setMenu(open){
+    tabsNav.classList.toggle('is-open', open);
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menuBtn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  }
+  menuBtn.addEventListener('click', function(){ setMenu(!tabsNav.classList.contains('is-open')); });
+  tabsNav.addEventListener('click', function(e){ if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') setMenu(false); });
+
   if ('IntersectionObserver' in window && sections.length){
     var observer = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
