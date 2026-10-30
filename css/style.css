@@ -494,3 +494,12 @@ footer.site-footer{
 [hidden]{ display:none !important; }
 /* el selector siempre legible aunque una sombra pase por debajo */
 .home-sun{ background:rgba(250,251,250,0.86); border-radius:16px; padding:2px 10px; }
+
+/* header ajustado: el fondo apenas más alto que el logo y las letras */
+.nav-inner{ padding-block:4px; }
+nav.tabs a{ padding-block:5px; }
+nav.tabs .ig-link{ padding:5px; }
+.menu-btn{ height:30px; width:36px; }
+@media (max-width:860px){ .nav-inner{ padding-block:4px; } nav.tabs a{ padding-block:11px; } nav.tabs .ig-link{ padding:11px 12px; } }
+.page-section{ scroll-margin-top:44px; }
+@media (max-width:640px){ .results{ top:41px; } }
