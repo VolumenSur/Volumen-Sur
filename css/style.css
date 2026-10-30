@@ -368,3 +368,6 @@ footer.site-footer{
 .legend .lc-band{ background:var(--comfort-soft); border-radius:2px; width:14px; height:9px; }
 
 .lab-note{ margin-top:28px; color:var(--muted-2); font-size:0.78rem; max-width:640px; }
+
+/* dos secciones oscuras seguidas (laboratorio → proyectos): línea divisoria */
+.page-section:not(.inv):not(.band) + .page-section:not(.inv):not(.band){ border-top:1px solid var(--line); }
