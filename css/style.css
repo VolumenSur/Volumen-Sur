@@ -76,12 +76,27 @@ nav.tabs a:hover:not(.is-active){ color:var(--ink); }
 
 /* ---------- page flow ---------- */
 
-.page-section{ scroll-margin-top:78px; }
+.page-section{ scroll-margin-top:62px; padding:76px 0; background:var(--bg); color:var(--ink); }
+
+/* secciones alternadas: la paleta se invierte (fondo claro, tinta oscura) */
+.page-section.inv{
+  --bg:#E4E8E4; --surface:#EFF2EF; --surface-2:#D8DED9; --surface-3:#C9D1CB;
+  --ink:#141A1E; --muted:#4C5957; --muted-2:#6B7775; --line:#C2CBC5; --line-soft:#D2D9D4;
+  --accent:#8C6A1C; --cold:#2E6389; --comfort:#4D7838; --comfort-soft:#C4D5B8; --hot:#A24C20;
+}
+/* franja de acento */
+.page-section.band{
+  --ink:#1A1508; --muted:#4A3D17; --line:#1A1508; --muted-2:#1A1508;
+  background:var(--accent); color:var(--ink); padding:44px 0;
+}
+.page-section.band .section-head{ display:flex; align-items:baseline; justify-content:space-between; gap:12px 24px; flex-wrap:wrap; text-align:left; }
+.page-section.band .section-head p{ margin:0; }
+.page-section.band .cta-row{ margin-top:16px; }
 
 /* ---------- inicio: hero ---------- */
 
 .hero{
-  padding:64px 0 40px;
+  padding:48px 0 24px;
   text-align:center;
 }
 .hero .eyebrow{
@@ -110,26 +125,26 @@ nav.tabs a:hover:not(.is-active){ color:var(--ink); }
 
 /* ---------- services ---------- */
 
-.section-head{ text-align:center; margin-top:70px; }
+.section-head{ text-align:center; }
 .section-head h2{ font-size:1.5rem; }
 .section-head p{ color:var(--muted); font-size:0.92rem; margin-top:8px; max-width:480px; margin-left:auto; margin-right:auto; }
 
-.services-grid{
-  display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
-  gap:12px; margin-top:28px;
+.services-list{
+  display:grid; grid-template-columns:1fr 1fr; column-gap:48px; margin-top:32px;
+  border-bottom:1px solid var(--line);
 }
-.service-card{
-  background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
-  padding:18px;
+.service{ padding:14px 0; border-top:1px solid var(--line); display:grid; grid-template-columns:minmax(150px, 0.8fr) 1.2fr; gap:16px; align-items:baseline; }
+.service h3{ font-size:1.02rem; }
+.service p{ margin:0; color:var(--muted); font-size:0.85rem; line-height:1.4; }
+@media (max-width:760px){
+  .services-list{ grid-template-columns:1fr; }
+  .service{ grid-template-columns:1fr; gap:2px; padding:11px 0; }
 }
-.service-card .num{ font-family:'IBM Plex Mono', monospace; color:var(--accent); font-size:0.78rem; }
-.service-card h3{ font-size:1.02rem; margin-top:8px; }
-.service-card p{ color:var(--muted); font-size:0.85rem; margin-top:6px; }
 
 /* ---------- footer / contact ---------- */
 
 footer.site-footer{
-  margin-top:80px; border-top:1px solid var(--line-soft);
+  border-top:1px solid var(--line-soft);
   padding:36px 0 40px;
 }
 .footer-grid{
@@ -146,7 +161,6 @@ footer.site-footer{
 /* ---------- quienes somos ---------- */
 
 .about{
-  padding:60px 0 40px;
   display:grid; grid-template-columns:180px 1fr; gap:34px; align-items:start;
 }
 @media (max-width:640px){ .about{ grid-template-columns:1fr; } }
@@ -247,7 +261,7 @@ footer.site-footer{
 
 /* ---------- laboratorio bioclimatico ---------- */
 
-.lab-intro{ padding:44px 0 8px; }
+.lab-intro{ padding:0 0 8px; }
 .lab-intro h2{ font-size:1.7rem; line-height:1.25; max-width:620px; }
 .lab-intro p{ color:var(--muted); max-width:560px; font-size:0.95rem; margin-top:10px; }
 
@@ -269,16 +283,16 @@ footer.site-footer{
 
 /* season tabs */
 
-.season-tabs{ display:flex; gap:6px; flex-wrap:wrap; margin:30px 0 0; border-bottom:1px solid var(--line-soft); }
+.season-tabs{ display:grid; grid-template-columns:repeat(4, 1fr); gap:8px; margin:28px 0 0; max-width:560px; }
 .season-tab{
-  background:none; border:none; border-bottom:2px solid transparent; color:var(--muted);
-  padding:10px 4px 12px; margin-right:22px; font-size:0.92rem; cursor:pointer; text-align:left;
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); color:var(--muted);
+  padding:12px 4px 10px; font-size:0.86rem; cursor:pointer;
+  display:flex; flex-direction:column; align-items:center; gap:6px;
 }
-.season-tab .lbl-main{ display:block; font-family:'Spectral', serif; font-size:1.02rem; color:inherit; }
-.season-tab .lbl-sub{ display:block; font-size:0.74rem; color:var(--muted-2); margin-top:2px; }
-.season-tab.is-active{ color:var(--ink); border-bottom-color:var(--accent); }
-.season-tab.is-active .lbl-sub{ color:var(--muted); }
-.season-tab:hover:not(.is-active){ color:var(--ink); }
+.season-tab svg{ width:24px; height:24px; }
+.season-tab.is-active{ color:#1A1508; background:var(--accent); border-color:var(--accent); font-weight:600; }
+.season-tab:hover:not(.is-active){ color:var(--ink); border-color:var(--muted-2); }
+@media (max-width:420px){ .season-tabs{ gap:6px; } .season-tab{ font-size:0.76rem; padding:10px 2px 8px; } }
 
 /* temps */
 
@@ -336,7 +350,9 @@ footer.site-footer{
 .g-marker.zone-comfort{ background:var(--comfort); }
 .g-marker.zone-hot{ background:var(--hot); }
 .g-scale{ display:flex; justify-content:space-between; font-size:0.68rem; color:var(--muted-2); margin-top:5px; font-family:'IBM Plex Mono', monospace; }
-.g-status{ font-size:0.82rem; color:var(--muted); margin-top:10px; }
+.g-foot{ display:flex; justify-content:space-between; align-items:baseline; margin-top:10px; }
+.g-status{ font-size:0.82rem; color:var(--muted); }
+.g-cost{ font-family:'IBM Plex Mono', monospace; font-size:0.95rem; letter-spacing:0.08em; color:var(--ink); }
 
 .feedback{
   margin-top:26px; background:var(--surface); border:1px solid var(--line); border-left:2px solid var(--accent);

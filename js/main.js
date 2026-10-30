@@ -37,8 +37,8 @@
   var servicesGrid = document.getElementById('servicesGrid');
   SERVICES.forEach(function(s, i){
     var card = document.createElement('div');
-    card.className = 'service-card';
-    card.innerHTML = '<div class="num">' + String(i+1).padStart(2,'0') + '</div><h3>' + s.name + '</h3><p>' + s.desc + '</p>';
+    card.className = 'service';
+    card.innerHTML = '<h3>' + s.name + '</h3><p>' + s.desc + '</p>';
     servicesGrid.appendChild(card);
   });
 
@@ -78,10 +78,14 @@
   ];
 
   var SEASONS = [
-    {id:'verano',    main:'Solsticio de verano',    sub:'Día más largo'},
-    {id:'otono',     main:'Equinoccio de otoño',    sub:'Día y noche parejos'},
-    {id:'invierno',  main:'Solsticio de invierno',  sub:'Día más corto'},
-    {id:'primavera', main:'Equinoccio de primavera',sub:'Día y noche parejos'},
+    {id:'verano',    name:'Verano',    full:'Solsticio de verano',
+     icon:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/>'},
+    {id:'otono',     name:'Otoño',     full:'Equinoccio de otoño',
+     icon:'<path d="M5 19C5 10 11 5 20 4c-1 9-6 15-15 15z"/><path d="M5 19l8-8"/>'},
+    {id:'invierno',  name:'Invierno',  full:'Solsticio de invierno',
+     icon:'<path d="M12 2v20M3.3 7l17.4 10M3.3 17L20.7 7"/><path d="M9.5 3.5 12 6l2.5-2.5M9.5 20.5 12 18l2.5 2.5"/>'},
+    {id:'primavera', name:'Primavera', full:'Equinoccio de primavera',
+     icon:'<path d="M12 21v-9"/><path d="M12 13C12 8 8.5 5 4 5c0 5 3.5 8 8 8z"/><path d="M12 11c0-4 3-6.5 8-6.5 0 4.5-3 6.5-8 6.5z"/>'},
   ];
 
   var MOMENTS = [
@@ -104,7 +108,7 @@
   var GAIN = {morning:1, midday:4, night:2};
   var HUMIDITY_FACTOR = {humid:0.3, temperate:0.6, dry:1, arid:1.15};
   var SCALE_MIN = -20, SCALE_MAX = 40;
-  var COMFORT_MIN = 20, COMFORT_MAX = 26;
+  var COMFORT_MIN = 18, COMFORT_MAX = 24;
 
   var state = { cityId:'trelew', seasonId:'verano', active:{} };
   STRATEGIES.forEach(function(s){ state.active[s.id] = false; });
@@ -126,7 +130,9 @@
   SEASONS.forEach(function(s){
     var b = document.createElement('button');
     b.type = 'button'; b.className = 'season-tab';
-    b.innerHTML = '<span class="lbl-main">' + s.main + '</span><span class="lbl-sub">' + s.sub + '</span>';
+    b.title = s.full;
+    b.setAttribute('aria-label', s.full);
+    b.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + s.icon + '</svg><span>' + s.name + '</span>';
     b.addEventListener('click', function(){ state.seasonId = s.id; renderAll(); });
     b._id = s.id;
     seasonTabs.appendChild(b);
@@ -182,6 +188,12 @@
     if (zone === 'cold') return t < COMFORT_MIN - 6 ? 'Frío marcado' : 'Fresco';
     return t > COMFORT_MAX + 6 ? 'Caluroso' : 'Cálido';
   }
+  // gasto de climatización: 1 a 5 signos según cuánto se aleja de la zona de confort
+  function costOf(t){
+    var d = t < COMFORT_MIN ? COMFORT_MIN - t : (t > COMFORT_MAX ? t - COMFORT_MAX : 0);
+    var n = d === 0 ? 1 : d <= 3 ? 2 : d <= 6 ? 3 : d <= 10 ? 4 : 5;
+    return new Array(n + 1).join('$');
+  }
   function cap(s){ return s.charAt(0).toUpperCase() + s.slice(1); }
   function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
   function pct(v){ return ((v - SCALE_MIN) / (SCALE_MAX - SCALE_MIN)) * 100; }
@@ -233,7 +245,7 @@
           '<div class="g-marker zone-' + zone + '" style="left:' + curPct + '%;"></div>' +
         '</div>' +
         '<div class="g-scale"><span>' + SCALE_MIN + '°C</span><span>' + SCALE_MAX + '°C</span></div>' +
-        '<div class="g-status">' + zoneStatusText(zone, out.result[m.id]) + '</div>';
+        '<div class="g-foot"><span class="g-status">' + zoneStatusText(zone, out.result[m.id]) + '</span><span class="g-cost">' + costOf(out.result[m.id]) + '</span></div>';
       gauges.appendChild(g);
     });
 
@@ -247,7 +259,7 @@
       return '<div class="fb-title">Sin estrategias</div>Así responde el ambiente sin ninguna intervención pasiva. Activá alguna estrategia para ver cómo cambia.';
     }
     if (comfortCount === 3){
-      return '<div class="fb-title">Resultado</div>Los tres momentos del día quedan dentro de la zona de confort (20–26°C) con esta combinación.';
+      return '<div class="fb-title">Resultado</div>Los tres momentos del día quedan dentro de la zona de confort (18–24°C) con esta combinación.';
     }
     var hint = '';
     if (hotMoments.length){
