@@ -1,7 +1,7 @@
 /* Inicio: maqueta isométrica (caja abierta al norte y árboles) con la sombra del sol
    real según ciudad, estación y hora. Si no hay WebGL, el Inicio queda igual sobre blanco. */
 (function(){
-  var hero = document.getElementById('inicio');
+  var hero = document.getElementById('sol');
   var modelSpace = document.getElementById('homeModel');
   if (!hero || !modelSpace) return;
   function without3d(){                 // sin 3D: el Inicio queda limpio, sin maqueta ni selector
@@ -165,9 +165,7 @@
     camera.left = -cx * u; camera.right = (w - cx) * u;
     camera.top = cy * u;   camera.bottom = -(h - cy) * u;
     camera.updateProjectionMatrix();
-    var btns = hero.querySelectorAll('.home-cta .btn'), lo = Infinity, hi = -Infinity;
-    Array.prototype.forEach.call(btns, function(b){ var r = b.getBoundingClientRect(); lo = Math.min(lo, r.left); hi = Math.max(hi, r.right); });
-    buildForest((hi > lo ? hi - lo : w * 0.5) * u);
+    buildForest(Math.min(mr.width, 620) * u);       // hilera de árboles de ancho acotado
     kick();
   }
   window.addEventListener('resize', resize);

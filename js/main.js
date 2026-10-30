@@ -25,6 +25,17 @@
   tabsNav.addEventListener('click', function(e){ if (e.target.closest('a')) setMenu(false); });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') setMenu(false); });
 
+  // header transparente mientras se ve la foto del inicio
+  var siteNav = document.querySelector('header.site-nav');
+  var photo = document.querySelector('.hero-photo');
+  function navOverPhoto(){
+    if (!siteNav || !photo) return;
+    siteNav.classList.toggle('over-photo', window.scrollY < photo.offsetHeight - siteNav.offsetHeight - 8);
+  }
+  window.addEventListener('scroll', navOverPhoto, { passive:true });
+  window.addEventListener('resize', navOverPhoto);
+  navOverPhoto();
+
   if ('IntersectionObserver' in window && sections.length){
     var observer = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
