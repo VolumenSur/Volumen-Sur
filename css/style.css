@@ -145,16 +145,15 @@ nav.tabs .ig-link{ display:inline-flex; align-items:center; gap:8px; margin-left
 .section-head p{ color:var(--muted); font-size:0.92rem; margin-top:8px; max-width:480px; margin-left:auto; margin-right:auto; }
 
 .services-list{
-  display:grid; grid-template-columns:1fr 1fr; column-gap:48px; margin-top:32px;
-  border-bottom:1px solid var(--line);
+  list-style:none; margin:24px auto 0; padding:0; max-width:880px;
+  display:flex; flex-wrap:wrap; justify-content:center; gap:8px 10px;
 }
-.service{ padding:14px 0; border-top:1px solid var(--line); display:grid; grid-template-columns:minmax(150px, 0.8fr) 1.2fr; gap:16px; align-items:baseline; }
-.service h3{ font-size:1.02rem; }
-.service p{ margin:0; color:var(--muted); font-size:0.85rem; line-height:1.4; }
-@media (max-width:760px){
-  .services-list{ grid-template-columns:1fr; }
-  .service{ grid-template-columns:1fr; gap:2px; padding:11px 0; }
+.service{
+  padding:7px 14px; border:1px solid var(--line); border-radius:20px;
+  font-family:'Spectral', serif; font-size:1rem; line-height:1.3;
 }
+.page-section#servicios{ padding:52px 0; }
+@media (max-width:640px){ .service{ font-size:0.92rem; padding:6px 12px; } .page-section#servicios{ padding:40px 0; } }
 
 /* ---------- footer / contact ---------- */
 

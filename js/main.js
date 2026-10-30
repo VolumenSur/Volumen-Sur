@@ -47,9 +47,10 @@
   ];
   var servicesGrid = document.getElementById('servicesGrid');
   SERVICES.forEach(function(s, i){
-    var card = document.createElement('div');
+    var card = document.createElement('li');
     card.className = 'service';
-    card.innerHTML = '<h3>' + s.name + '</h3><p>' + s.desc + '</p>';
+    card.title = s.desc;
+    card.textContent = s.name;
     servicesGrid.appendChild(card);
   });
 
